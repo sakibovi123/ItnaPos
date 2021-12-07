@@ -1,0 +1,190 @@
+{% load static %}
+{% include 'landing/base.html' %}
+
+{% block content %}
+
+<div class="for_____bg___img">
+    <!-- top header part start -->
+    <div class="top_________header">
+      <ul>
+        <div class="phone___________mail">
+          <li>
+            <p>
+              <span class="iconify" data-icon="mdi:phone"></span> Phone:
+              ***********
+            </p>
+          </li>
+          <li>
+            <p>
+              <span class="iconify" data-icon="mdi:message-text-clock"></span>
+              Support@asdasdasd.com
+            </p>
+          </li>
+        </div>
+        <div class="about_____to____help">
+          <li>
+            <div class="btn-group dropdown__________content">
+              <button class="btn btn-sm dropdown-toggle all___drop__btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                About Us
+              </button>
+              <ul class="dropdown-menu top____header____dropdown">
+                <a class="text-dark" href="#"><li>hellllo</li></a>
+                <a class="text-dark" href="#"><li>hellllo</li></a>
+                <a class="text-dark" href="#"><li>hellllo</li></a>
+                <a class="text-dark" href="#"><li>hellllo</li></a>
+    
+
+              </ul>
+            </div>
+          </li>
+          <li><a href="#">Affiliate</a></li>
+          <li>
+            <div class="btn-group dropdown__________content">
+              <button class="btn btn-sm dropdown-toggle all___drop__btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Migrate
+              </button>
+              <ul class="dropdown-menu top____header____dropdown">
+                <a class="text-dark" href="#"><li>hellllo</li></a>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <div class="btn-group dropdown__________content">
+              <button class="btn btn-sm dropdown-toggle all___drop__btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Help
+              </button>
+              <ul class="dropdown-menu top____header____dropdown">
+                <a class="text-dark" href="#"><li>hellllo</li></a>
+              </ul>
+            </div>
+          </li>
+        </div>
+        <div class="social_________icon">
+          <li>
+            <a href="#">
+              <p>
+                <span class="iconify" data-icon="akar-icons:twitter-fill"></span>
+              </p>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <p>
+                <span class="iconify" data-icon="akar-icons:facebook-fill"></span>
+              </p>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <p>
+                <span class="iconify" data-icon="akar-icons:youtube-fill"></span>
+              </p>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <p>
+                <span class="iconify" data-icon="akar-icons:linkedin-fill"></span>
+              </p>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <p><span class="iconify" data-icon="cib:gmail"></span></p>
+            </a>
+          </li>
+        </div>
+      </ul>
+    </div>
+    <!-- top header part end -->
+
+    <!-- main header start -->
+    <div class="container">
+      <div class="main___________header">
+        <ul>
+          <li>
+            <p class="fw-bold fs-4 logo_____img">ITNA GLOBAL</p>
+          </li>
+          <div class="side__________content" id="sidebar">
+            <p class="sidebar________icon_____close"><span class="iconify" data-icon="eva:close-circle-fill" style="color: white;"></span></p>
+            <li><a class="fw-bold" href="#">Home</a></li>
+            <li><a class="fw-bold" href="#">Black Friday</a></li>
+            <li><a class="fw-bold" href="#">Hosting</a></li>
+            <li><a class="fw-bold" href="#">BDIX Hosting</a></li>
+            <li><a class="fw-bold" href="#">Server</a></li>
+            <li><a class="fw-bold" href="#">Domain</a></li>
+            <li>
+              <a href="{% url 'login' %}" class="header_______button fw-bold">LOGIN</a>
+              <a href="{% url 'registration' %}" class="header_______button fw-bold">SIGN UP</a>
+            </li>
+          </div>
+          <div class="hamburger_____________menu">
+            <div id="hamburger_________id">
+              <span class="iconify hamburger_____________icon" data-icon="ci:hamburger"></span>
+            </div>
+          </div>
+        </ul>
+      </div>
+    </div>
+
+    <!-- under header content start -->
+    <div class="under___________header">
+      <p class="web_________hosting">WEB HOSTING BD</p>
+      <p class="domain_______host">Domain Hosting Bangladesh</p>
+      <p class="web_________hosting">
+        Best Kichu ekta
+        <span class="type-animate fw-bold">provider in BANGLADESH</span>
+      </p>
+      <!-- <div class="some___classification">
+        <div class="some___classification____list">
+          <li>
+            <span class="fw-bold classification">Cheap Domain</span>
+            Registration
+          </li>
+          <li>
+            <span class="fw-bold classification">Cheap Domain</span>
+            Registration
+          </li>
+        </div>
+        <div class="some___classification____list">
+          <li>
+            <span class="fw-bold classification">Cheap Domain</span>
+            Registration
+          </li>
+          <li>
+            <span class="fw-bold classification">Cheap Domain</span>
+            Registration
+          </li>
+        </div>
+      </div> -->
+      <button class="view______services">View Services</button>
+    </div>
+    <!-- under header content end -->
+  </div>
+  <!-- main header end -->
+
+  <!-- back top top start -->
+  <a href="#" class="to-top">
+    <p><span class="iconify" data-icon="cil:arrow-thick-top"></span></p>
+  </a>
+  <!-- back top top end -->
+
+  <!-- floating rated bar start -->
+  <div class="floating_____________bar">
+    <p>
+      <span class="iconify" data-icon="fa-solid:award" style="color: #19361a"></span>
+    </p>
+    <p class="fw-bold">
+      Over 200+ customers worldwide rated us excellent on
+      <span class="iconify" data-icon="ant-design:star-filled" style="color: #19361a"></span>
+      trust pilot
+      <span class="iconify" data-icon="flat-color-icons:google" style="color: #19361a"></span>
+    </p>
+  </div>
+  <!-- floating rated bar end -->
+
+  <script src="{% static 'js/saas/typed.js' %}"></script>
+  <script src="{% static 'js/saas/landing.js' %}"></script>
+
+
+  {% endblock %}

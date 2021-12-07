@@ -1,0 +1,91 @@
+{% load static %} {% include 'adminpanel/sidebar.html' %}
+<link rel="stylesheet" href="{% static 'css/admin-panel/admin-panel.css' %}">
+<link rel="stylesheet" href="{% static 'css/admin-panel/orders.css' %}">
+
+<!-- search content start -->
+<div class="main____search________content">
+  <div class="search_____content me-1 mt-2">
+    <form>
+      <div class="input-group">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="search here....."
+          aria-label=""
+          aria-describedby="basic-addon1"
+        />
+        <div class="input-group-prepend">
+          <button class="btn search_____btn" type="button">
+            Search
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div>
+    <div class="dropdown me-1 mt-2">
+        <button class="dropdown-toggle search_________btn" type="button" id="exportBtn" data-bs-toggle="dropdown" aria-expanded="false">
+            <span class="iconify" data-icon="bx:bx-export"></span> Export
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="exportBtn">
+          <li><a class="dropdown-item" href="#">Orders</a></li>
+        </ul>
+      </div>
+  </div>
+</div>
+<!-- search content end -->
+
+<!-- order status start -->
+<div class="order_____status">
+  <h5>Order Status: </h5>
+  <form>
+    <select class="form-select main____select" aria-label="Default select example">
+        <option selected>All</option>
+      <option value="2">Open</option>
+      <option value="3">Pre-Authozied</option>
+      <option value="1">Pending Payment</option>
+      <option value="2">Partially Paid</option>
+      <option value="3">Paid</option>
+      <option value="1">Partially Refunded</option>
+      <option value="2">Voided</option>
+      <option value="3">Exchanged</option>
+      <option value="3" class="fw-bold">Cancelled</option>
+    </select>
+  </form>
+</div>
+<!-- order status end -->
+
+
+<!-- orders table start -->
+<div class="main____table table-responsive">
+  <table class="table">
+    <thead class="table_____head">
+      <tr>
+        <th scope="col">Order ID</th>
+        <th scope="col">Order Date</th>
+        <th scope="col">Status</th>
+        <th scope="col">Total Sales</th>
+        
+        <th scope="col">Sold By</th>
+        <th scope="col">Customer</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% if orders %}
+      {% for o in orders %}
+      <tr>
+        <th scope="row">{{ o.id }}</th>
+        <td>{{ o.created_at }}</td>
+        <td>{{ o.status }}</td>
+        <td>{{ o.grand_total }}</td>
+        <td>{{ o.shop.user.username }}</td>
+        <td>{{ o.customer.customer_name }}</td>
+      </tr>
+      {% endfor %}
+      {% else %}
+      <h3>No Orders Found!</h3>
+      {% endif %}
+    </tbody>
+  </table>
+</div>
+<!-- orders table end -->

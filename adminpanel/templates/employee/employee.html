@@ -1,0 +1,120 @@
+{% load static %} {% include 'adminpanel/sidebar.html' %}
+<link rel="stylesheet" href="{% static 'css/admin-panel/admin-panel.css' %}" />
+<link rel="stylesheet" href="{% static 'css/admin-panel/orders.css' %}" />
+<link rel="stylesheet" href="{% static 'css/admin-panel/department.css' %}" />
+
+<!-- search content start -->
+<div class="main____search________content">
+    <div class="search_____content me-1 mt-2">
+      <form>
+        <div class="input-group">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="search here....."
+            aria-label=""
+            aria-describedby="basic-addon1"
+          />
+          <div class="input-group-prepend">
+            <button class="btn search_____btn" type="button">Search</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="me-1 mt-2">
+        <button type="button" class="btn btn-Danger">Delete</button>
+      <a href="{% url 'create-employee' %}" type="button" class="btn new____vendor">New Employee</a>
+    </div>
+  </div>
+  <!-- search content end -->
+
+ <!-- department table start -->
+<div class="main____dept____table table-responsive">
+    <table class="table">
+      <thead class="table_____head">
+        <tr>
+          <th scope="col">
+            <div class="form-check">
+              <form>
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value=""
+                  id="tabelCheck"
+                />
+              </form>
+            </div>
+          </th>
+          <th scope="col">First Name</th>
+          <th scope="col">Last Name</th>
+          <th scope="col">Nickname</th>
+          <th scope="col">Email</th>
+          <th scope="col">Phone</th>
+          <th scope="col">Store</th>
+          <th scope="col">Role</th>
+          <th scope="col">Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">
+            <form>
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value=""
+                id="tabelCheck1"
+              />
+            </form>
+          </th>
+          <td><a href="{% url 'edit-employee' %}" class="w-100 d-flex">Mark</a></td>
+          <td><a href="{% url 'edit-employee' %}" class="w-100 d-flex">Mark</a></td>
+          <td><a href="{% url 'edit-employee' %}" class="w-100 d-flex">Mark</a></td>
+          <td><a href="{% url 'edit-employee' %}" class="w-100 d-flex">Mark</a></td>
+          <td><a href="{% url 'edit-employee' %}" class="w-100 d-flex">Mark</a></td>
+          <td><a href="{% url 'edit-employee' %}" class="w-100 d-flex">Mark</a></td>
+          <td><a href="{% url 'edit-employee' %}" class="w-100 d-flex">Mark</a></td>
+          <td class="d-flex align-items-center">
+            <a href="{% url 'edit-employee' %}" class="w-100 d-flex">Mark</a>
+            <form>
+              <p><span
+                  class="iconify cross___icon"
+                  data-icon="emojione:cross-mark"
+                ></span></p>
+            </form>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">
+            <form>
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value=""
+                id="tabelCheck2"
+              />
+            </form>
+          </th>
+          <td><a href="{% url 'edit-employee' %}" class="w-100 d-flex">Mark2</a></td>
+          <td><a href="{% url 'edit-employee' %}" class="w-100 d-flex">Mark</a></td>
+          <td><a href="{% url 'edit-employee' %}" class="w-100 d-flex">Mark</a></td>
+          <td><a href="{% url 'edit-employee' %}" class="w-100 d-flex">Mark</a></td>
+          <td><a href="{% url 'edit-employee' %}" class="w-100 d-flex">Mark</a></td>
+          <td><a href="{% url 'edit-employee' %}" class="w-100 d-flex">Mark</a></td>
+          <td><a href="{% url 'edit-employee' %}" class="w-100 d-flex">Mark</a></td>
+          <td class="d-flex align-items-center">
+            <a href="{% url 'edit-employee' %}" class="w-100 d-flex">Mark2</a>
+            <form>
+              <p>
+                  <span
+                    class="iconify cross___icon"
+                    data-icon="emojione:cross-mark"
+                  ></span>
+                  </p>
+            </form>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!-- department table end -->

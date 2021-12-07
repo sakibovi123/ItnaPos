@@ -1,0 +1,18 @@
+{% extends "restaurant/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/restaurant/closeReg.css' %}" />
+{% include "restaurant/sidebar.html" %}
+
+{% comment %} top nav {% endcomment %}
+
+<div class="top___nav">
+    <section class="restaurant__hamburgerMenu">
+        <span class="iconify" data-icon="ci:menu-alt-05"></span>
+      </section>
+</div>
+
+
+{% endblock %}

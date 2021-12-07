@@ -1,0 +1,205 @@
+{% load static %}
+{% include 'adminpanel/nav.html' %}
+
+    <!-- sidebar start -->
+    <div class="sidebar_____container" id="sidebar">
+      <p class="close____btn sidebar________icon_____close"><span class="iconify fs-5" data-icon="eva:close-circle-fill" style="color: white;"></span></p>
+      <p class="text-white text-center fs-4 itnastore fw-bold">ITNA STORE</p>
+      <div class="sidebar_______list">
+          <ul>
+              <li class="mt-4"><p class="me-3"><span class="iconify fs-5" data-icon="bx:bxs-dashboard" style="color: white;"></span></p><a class="fs-5" href="{% url 'admin-home' shop_id.id %}">Dashboard</a></li>
+              <li class="mt-4"><p class="me-3"><span class="iconify fs-5" data-icon="carbon:direction-straight-right-filled" style="color: white;"></span></p><a class="fs-5" href="{% url 'open-restaurant' shop_id.id %}">Go To POSS</a></li>
+              <li class="mt-4"><p class="me-3"><span class="iconify fs-5" data-icon="carbon:warning-other" style="color: white;"></span></p><a class="fs-5" href="{% url 'admin-order' shop_id.id %}">Orders</a></li>
+             
+              <li class="mt-4">
+                  <div class="accordion w-100" id="accordionExample">
+                      <div class="accordion-item accor____item">
+                        <h2 class="accordion-header" id="Inventory">
+                          <button class="accordion-button accor_____btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#Inventory1" aria-expanded="false" aria-controls="Inventory1">
+                              <p class="me-3"><span class="iconify fs-5" data-icon="carbon:inventory-management" style="color: white;"></span></p> <p class="fs-5">Inventory</p>
+                          </button>
+                        </h2>
+                        <div id="Inventory1" class="accordion-collapse collapse" aria-labelledby="Inventory" data-bs-parent="#accordionExample">
+                          <div class="accordion-body accor____body">
+                              <ul>
+                                  <li class="mt-2"><a href="{% url 'department' shop_id.id %}">Departments</a></li>
+                                  <li class="mt-2"><a href="{% url 'category' shop_id.id %}">Categories</a></li>
+                                  <li class="mt-2"><a href="{% url 'product' shop_id.id %}">Products</a></li>            
+                              </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+              </li>
+              <li class="mt-4">
+                  <div class="accordion w-100" id="accordionExample">
+                      <div class="accordion-item accor____item">
+                        <h2 class="accordion-header" id="Customers">
+                          <button class="accordion-button accor_____btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#Customers1" aria-expanded="false" aria-controls="Customers1">
+                              <p class="me-3"><span class="iconify fs-5" data-icon="ant-design:user-add-outlined" style="color: white;"></span></p> <p class="fs-5">Customers</p>
+                          </button>
+                        </h2>
+                        <div id="Customers1" class="accordion-collapse collapse" aria-labelledby="Customers" data-bs-parent="#accordionExample">
+                          <div class="accordion-body accor____body">
+                              <ul>
+                                  <li class="mt-2"><a href="{% url 'customer' shop_id.id %}">Customer List</a></li>          
+                              </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+              </li>
+              <li class="mt-4">
+                  <div class="accordion w-100" id="accordionExample">
+                      <div class="accordion-item accor____item">
+                        <h2 class="accordion-header" id="Vendors">
+                          <button class="accordion-button accor_____btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#Vendors1" aria-expanded="false" aria-controls="Vendors1">
+                              <p class="me-3"><span class="iconify fs-5" data-icon="ant-design:property-safety-outlined"  style="color: white;"></span></p> <p class="fs-5">Vendors</p>
+                          </button>
+                        </h2>
+                        <div id="Vendors1" class="accordion-collapse collapse" aria-labelledby="Vendors" data-bs-parent="#accordionExample">
+                          <div class="accordion-body accor____body">
+                              <ul>
+                                  <li class="mt-2"><a href="{% url 'vendor' shop_id.id %}">Vendor List</a></li>
+                                          
+                              </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+              </li>
+              <li class="mt-4">
+                  <div class="accordion w-100" id="accordionExample">
+                      <div class="accordion-item accor____item">
+                        <h2 class="accordion-header" id="Employees">
+                          <button class="accordion-button accor_____btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#Employees1" aria-expanded="false" aria-controls="Employees1">
+                              <p class="me-3"><span class="iconify fs-5" data-icon="eos-icons:job" style="color: white;"></span></p> <p class="fs-5">Employees</p>
+                          </button>
+                        </h2>
+                        <div id="Employees1" class="accordion-collapse collapse" aria-labelledby="Employees" data-bs-parent="#accordionExample">
+                          <div class="accordion-body accor____body">
+                              <ul>
+                                  <li class="mt-2"><a href="{% url 'employee' %}">Employee List</a></li>
+                              </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+              </li>
+
+              <li class="mt-4"><p class="me-3"><span class="iconify fs-5" data-icon="bx:bxs-contact" style="color: white;"></span></p><a class="fs-5" href="{% url 'contact' %}">Contact Us</a></li>
+              
+              <!-- <li class="mt-4">
+                  <div class="accordion w-100" id="accordionExample">
+                      <div class="accordion-item accor____item">
+                        <h2 class="accordion-header" id="Reporting">
+                          <button class="accordion-button accor_____btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#Reporting1" aria-expanded="false" aria-controls="Reporting1">
+                              <p class="me-3"><span class="iconify fs-5"  data-icon="akar-icons:paper"  style="color: white;"></span></p> <p class="fs-5">Reporting</p>
+                          </button>
+                        </h2>
+                        <div id="Reporting1" class="accordion-collapse collapse" aria-labelledby="Reporting" data-bs-parent="#accordionExample">
+                          <div class="accordion-body accor____body">
+                              <ul>
+                                  <li class="mt-2"><a href="#">Adjustment Report</a></li>
+                                  <li class="mt-2"><a href="#">Inventory Aging</a></li>
+                                  <li class="mt-2"><a href="#">Inventory Report</a></li>
+                                  <li class="mt-2"><a href="#">Modifiers Report</a></li>
+                                  <li class="mt-2"><a href="#">Product Mix Report</a></li>
+                                  <li class="mt-2"><a href="#">Serial Item Tracking Report</a></li>
+                                  <li class="mt-2"><a href="#">Tax Report</a></li>
+                                  <li class="mt-2"><a href="#">Tips Report</a></li>
+                                  <li class="mt-2"><a href="#">Z Report</a></li>                 
+                              </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+              </li> -->
+              <!-- <li class="mt-4">
+                  <div class="accordion w-100" id="accordionExample">
+                      <div class="accordion-item accor____item">
+                        <h2 class="accordion-header" id="Apps">
+                          <button class="accordion-button accor_____btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#Apps1" aria-expanded="false" aria-controls="Apps1">
+                              <p class="me-3"><span class="iconify fs-5" data-icon="clarity:vmw-app-line" style="color: white;"></span></p> <p class="fs-5">Apps</p>
+                          </button>
+                        </h2>
+                        <div id="Apps1" class="accordion-collapse collapse" aria-labelledby="Apps" data-bs-parent="#accordionExample">
+                          <div class="accordion-body accor____body">
+                              <ul>
+                                  <li class="mt-2"><a href="#">App Directory</a></li>
+                                         
+                              </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+              </li> -->
+              <!-- <li class="mt-4">
+                  <div class="accordion w-100" id="accordionExample">
+                      <div class="accordion-item accor____item">
+                        <h2 class="accordion-header" id="Settings">
+                          <button class="accordion-button accor_____btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#Settings1" aria-expanded="false" aria-controls="Settings1">
+                              <p class="me-3"><span class="iconify fs-5"  data-icon="bytesize:settings" style="color: white;"></span></p> <p class="fs-5">Settings</p>
+                          </button>
+                        </h2>
+                        <div id="Settings1" class="accordion-collapse collapse" aria-labelledby="Settings" data-bs-parent="#accordionExample">
+                          <div class="accordion-body accor____body">
+                              <ul>
+                                  <li class="mt-2"><a href="#">Contact</a></li> -->
+                                  <!-- <li class="mt-2"><a href="#">Company Settings</a></li>
+                                  <li class="mt-2"><a href="#">Store Settings</a></li>
+                                  <li class="mt-2"><a href="#">Register Settings</a></li>  
+                                  <li class="mt-2"><a href="#">Billing</a></li>
+                                  <li class="mt-2"><a href="#">Tax Manager</a></li>
+                                  <li class="mt-2"><a href="#">Tax Agencies</a></li>
+                                  <li class="mt-2"><a href="#">eHopper Support Access</a></li>            -->
+                              <!-- </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+              </li> -->
+              <li class="mt-4"><p class="me-3"><span class="iconify fs-5" d data-icon="ant-design:logout-outlined" style="color: white;"></span></p>
+                <a class="fs-5" href="{% url "logoutView" %}">Logout</a></li>
+              
+              
+          </ul>
+      </div>
+  </div>
+  <!-- sidebar end -->
+  <script>
+    // hamburger menu
+var hamburger_________id = document.getElementById("hamburger_________id");
+const sidebar = document.querySelector("#sidebar");
+const closeSidebar = document.querySelector(".sidebar________icon_____close");
+
+hamburger_________id.addEventListener("click", function (e) {
+  sidebar.classList.add("show_____menu");
+  document
+    .querySelector(".admin____overlay")
+    .classList.add("show__adminOverlay");
+    indiChart.style.zIndex = "-1";
+});
+
+closeSidebar.addEventListener("click", () => {
+  sidebar.classList.remove("show_____menu");
+  document
+    .querySelector(".admin____overlay")
+    .classList.remove("show__adminOverlay");
+});
+
+document.addEventListener("click", (event) => {
+  // console.log(event.target.classList[1]);
+  if (event.target.closest("#hamburger_________id")) return;
+  if (event.target.closest("#sidebar")) return;
+
+  if (event.target.classList[1] === "show__adminOverlay") {
+    document
+      .querySelector(".admin____overlay")
+      .classList.remove("show__adminOverlay");
+  }
+
+  sidebar.classList.remove("show_____menu");
+});
+  </script>
+  

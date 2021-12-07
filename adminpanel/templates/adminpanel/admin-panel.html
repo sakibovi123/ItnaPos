@@ -1,0 +1,92 @@
+{% load static %}
+{% include 'adminpanel/sidebar.html' %}
+
+
+
+
+<!-- main content start -->
+<div class="main_____content">
+
+    <!-- stats start -->
+    <div class="main____stat">
+      <!-- individual stat start -->
+      <div class="indi_____stat">
+        <div>
+          <p class="first____part"><span class="iconify icon" data-icon="ant-design:user-add-outlined"></span></p>
+        </div>
+        <div class="ms-2">
+          <p class="fw-bold">New Customers</p>
+          <p>10000</p>
+        </div>
+      </div>
+      <!-- individual stat end -->
+      <!--extra individual stat start -->
+      <div class="indi_____stat">
+        <div>
+          <p class="first____part"><span class="iconify icon"  data-icon="carbon:user-avatar"></span></p>
+        </div>
+        <div class="ms-2">
+          <p class="fw-bold">Repeat Customers</p>
+          <p>10000</p>
+        </div>
+      </div>
+      <div class="indi_____stat">
+        <div>
+          <p class="first____part"><span class="iconify icon" data-icon="fontisto:shopping-sale"></span></p>
+        </div>
+        <div class="ms-2">
+          <p class="fw-bold">Gross Sales</p>
+          <p>10000</p>
+        </div>
+      </div>
+      <div class="indi_____stat">
+        <div>
+          <p class="first____part"><span class="iconify icon"  data-icon="ant-design:transaction-outlined"></span></p>
+        </div>
+        <div class="ms-2">
+          <p class="fw-bold">Total Transactions</p>
+          <p>10000</p>
+        </div>
+      </div>
+      <div class="indi_____stat">
+        <div>
+          <p class="first____part"><span class="iconify icon" data-icon="ant-design:dollar-circle-outlined"></span></p>
+        </div>
+        <div class="ms-2">
+          <p class="fw-bold">Refunds</p>
+          <p>10000</p>
+        </div>
+      </div>
+      <!--extra individual stat end -->
+    </div>
+    <!-- stats end -->
+
+
+    <!-- chart div start -->
+    <div class="main_____chart____div">
+      <!-- individual chart start -->
+      <div class="card p-3 m-1 indi_____chart">
+        <h2 class="text-center fw-bold fs-4">New Customers</h2>
+        <canvas id="myChart1"></canvas>
+      </div>
+      <div class="card p-3 m-1 indi_____chart">
+        <h2 class="text-center fw-bold fs-4">Gross Sales</h2>
+        <canvas id="myChart2"></canvas>
+      </div>
+      <div class="card p-3 m-1 indi_____chart">
+        <h2 class="text-center fw-bold fs-4">Total Transactions</h2>
+        <canvas id="myChart3"></canvas>
+      </div>
+      <!-- individual chart end -->
+
+    </div>
+    <!-- chart div end -->
+
+
+
+  </div>
+  <!-- main content end -->
+<!-- chart js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.0/chart.min.js"></script>
+<script src="{% static 'js/admin-panel/admin-panel.js' %}"></script>

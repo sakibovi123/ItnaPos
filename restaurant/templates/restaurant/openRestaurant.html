@@ -1,0 +1,89 @@
+{% extends "restaurant/base.html" %}
+{% load static %}
+
+{% block content %}
+<link
+  rel="stylesheet"
+  href="{% static 'css/restaurant/openRestaurant.css' %}"
+/>
+
+{% include "restaurant/sidebar.html" %}
+
+<section class="restaurant__mainContent d-flex flex-wrap">
+  {% comment %}Restaurant left content starts{% endcomment %}
+    {% include "restaurant/openRestaurantLeftContent.html" %}
+  {% comment %}Restaurant left content ends{% endcomment %}
+
+  {% comment %}Restaurant right content starts{% endcomment %}
+  <div class="restaurant__rightContent">
+      {% comment %} Restaurant right navbar section starts{% endcomment %}
+      <section class="restaurant__rightNavbar px-2 d-flex justify-content-end">
+        <div class="restaurant__productSearchField bg-white d-flex align-items-center">
+            <span class="iconify text-muted" data-icon="ant-design:search-outlined"></span>
+            <input onkeyup="matchName(this)" class="w-100" type="search" placeholder="Search By Category..." >
+        </div>
+      </section>
+      {% comment %} Restaurant right navbar section starts{% endcomment %}
+
+        <div class="d-flex flex-column justify-content-between restaurant__rightMiddleAndBottom">
+            {% comment %}Restaurant right content middle section starts{% endcomment %}
+            <section class="restaurant__rightMiddleContent">
+                {% comment %} LOOP {% endcomment %}
+                {% for c in category %}
+                {% if c.item_set.all|length > 0 %}
+                    <div class="restaurant__rightCategorySection border-bottom border-muted pb-2 my-2 mx-2">
+                        <h5 class="fw-bold mb-3 restaurant__catName">{{ c.category_name }}</h5>
+                        
+                        <section class="d-flex flex-wrap restaurant__categoryProductSection">
+                            {% for i in c.item_set.all %}
+                            <form method="POST" class="restaurant__categoryProductForm" action="">
+                                {% csrf_token %}
+                                <input hidden type="text" name="item_id" value="{{ i.id }}">
+                                <button class="card restaurant__rightProductCard p-0">
+                                    <section class="restaurant__rightCatProduct w-100">
+                                        <div class="restaurant__rightCatProdutImg">
+                                            <img src="{{ i.item_img.url }}" alt="">
+                                        </div>
+
+                                        <div class="px-1">
+                                            <p>${{ i.item_price }}</p>
+                                        </div>
+                                    </section>
+
+                                    <section class="px-2">
+                                        <p class="fw-bold get__restaurantProductName">{{ i.item_name }}</p>
+                                    </section>
+                                </button>
+                            </form>
+                            {% endfor %}
+
+                            {% comment %}Extra{% endcomment %}
+                        
+                        </section>
+                    </div>
+                {% endif %}
+                {% endfor %}
+
+                {% comment %}Extra{% endcomment %}
+          
+               
+                
+
+            </section>
+            {% comment %}Restaurant right content middle section ends{% endcomment %}
+
+            {% comment %}Restaurant right content bottom section starts{% endcomment %}
+            <section class="justify-content-end">
+                <div class="d-flex restaurant__rightBottom">
+                    <a class="fw-bold text-dark border border-muted p-3 text-center bg-white" href="{% url 'due-restaurant' shopId.id%}">Due</a>
+                    <a class="fw-bold text-dark border border-muted p-3 text-center bg-white" href="#">Drawer</a>
+                    <a class="fw-bold text-dark border border-muted p-3 text-center bg-white" href="{% url 'restaurant-all-payments' shopId.id %}">Refund</a>
+                    <button class="fw-bold border border-muted bg-white">More <span class="iconify" data-icon="entypo:dots-three-vertical"></span></button>
+                </div>
+            </section>
+            {% comment %}Restaurant right content bottom section ends{% endcomment %}
+        </div>
+  </div>
+  {% comment %}Restaurant right content ends{% endcomment %}
+</section>
+{% endblock %}

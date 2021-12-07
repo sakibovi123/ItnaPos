@@ -1,0 +1,80 @@
+{% load static %}
+{% include 'account/base.html' %}
+
+<div class="reg_____main">
+    <p class="sign" align="center">Sign Up</p>
+    <form class="form2">
+      <input class="un" type="text" align="center" placeholder="Username" required/>
+      <div class="first_____last_____name">
+        <input
+          class="name____f"
+          type="text"
+          align="center"
+          placeholder="First Name" required
+        />
+        <input
+          class="name____f"
+          type="text"
+          align="center"
+          placeholder="Last Name" required
+        />
+      </div>
+      <input
+        class="un"
+        type="number"
+        align="center"
+        placeholder="Phone Number" required
+      />
+      <input class="un" type="email" align="center" placeholder="Email" required />
+      <input
+        class="pass"
+        type="password"
+        align="center"
+        placeholder="Password" required
+      />
+      <label class="pass" for="formUpload">Upload Profile Picture</label>
+      <input
+        class="upload____pro____pic"
+        id="formUpload"
+        name="uploads"
+        type="file" 
+        onchange="forupload(this)" required
+      />
+
+      <p class="pass" id="for-upload-name"></p>
+
+      <button type="submit" class="submit" align="center">Sign Up</button>
+    </form>
+  </div>
+
+  <script>
+    const forfile = () => {
+      const FileName = document.querySelector("#formFileLg").value;
+
+      let docFileMain = FileName.split("\\");
+      docFileMain = docFileMain[docFileMain.length - 1];
+      document.querySelector("#for-doc-file-name").innerText = docFileMain;
+    };
+
+    function forupload(e) {
+      let fileVal = e.files[0].name;
+
+      document.querySelector("#for-upload-name").innerText = fileVal;
+      document.querySelector("#for-upload-name").style.display = "block";
+      document.querySelector("#for-upload-name").style.background = "#19361a";
+
+      if (fileVal) {
+        var elem = document.getElementById("for-upload-name");
+        var width = 1;
+        var id = setInterval(frame, 10);
+        function frame() {
+          if (width >= 74) {
+            clearInterval(id);
+          } else {
+            width++;
+            elem.style.width = width + "%";
+          }
+        }
+      }
+    }
+  </script>

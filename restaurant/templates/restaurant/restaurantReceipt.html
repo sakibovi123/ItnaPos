@@ -1,0 +1,67 @@
+{% extends "restaurant/base.html" %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/restaurant/restaurantReceipt.css' %}" />
+
+<script src="{% static 'js/restaurant/restaurantReceipt.js' %}" defer></script>
+
+
+<div class="container my-4">
+    <a id="hideLink" href="{% url 'open-restaurant' shopId.id %}"><span class="iconify" data-icon="ant-design:left-outlined"></span> Go Back</a>
+    <h2 class="text-center fw-bold">{{ order_details.shop.shop_name }}</h2>
+
+
+    <div class="main____invoice">
+        <p class="text-center fs-4 fw-bold invoice___name mb-3">invoice/Bill</p>
+        <div class="main____inner___div">
+            <div class="inner_____div m-1">
+                <p class="p-1"><span class="fw-bold me-2">Buyer Name:</span> {{ order_details.customer.customer_name }} </p>
+                <p class="p-1"><span class="fw-bold me-2">Buyer Addresss:</span> {{ order_details.customer.customer_add }}</p>
+            </div>
+            <div class="inner_____div m-1">
+                <p class="p-1"><span class="fw-bold me-2">Date:</span> {{ order_details.created_at }} </p>
+                <p class="p-1"><span class="fw-bold me-2">Order ID:</span> {{ order_details.id }}</p>
+                <p class="p-1"><span class="fw-bold me-2">Sold By:</span>{{ order_details.shop.user.username }}</p>
+            </div>
+        </div>
+
+        <div class="main___table__div mt-4 table-responsive">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">SL No.</th>
+                    <th scope="col">Product</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Unit Price</th>
+                    <th scope="col">Subtotal</th>                    
+                  </tr>
+                </thead>
+                <tbody>
+                  {% if order_details.items.all|length > 0 %}
+                    {% for order in order_details.items.all %}
+                      <tr>
+                        <th scope="row">{{ forloop.counter }}</th>
+                        <td>{{ order.item.item_name }}</td>
+                        <td>{{ order.quantity }}</td>
+                        <td>$ {{ order.item.item_price }} </td>
+                        <td>$ {% widthratio order.item.item_price 1 order.quantity %}.00</td>
+                      </tr>
+                    {% endfor %}
+                  {% endif %}
+                </tbody>
+              </table>
+        </div>
+
+        <div class="main____inner___div mt-3">
+            <div class="inner_____div m-1">
+                <h4 class="p-1"><span class="fw-bold me-2">Total QTY:</span> {{ total_item }} </p>
+                <h4 class="p-1"><span class="fw-bold me-2">Total Amount:</span>$ {{ order_details.grand_total|floatformat:2 }}</p>
+            </div>
+        </div>
+    </div>
+
+    <button class="restaurant__printBtn my-2 d-flex justify-content-center mx-auto align-items-center">Print</button>
+</div>
+
+{% endblock %}

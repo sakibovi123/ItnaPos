@@ -1,0 +1,17 @@
+.top___nav{
+    padding-top: 0.9rem;
+    padding-bottom: 0.8rem;
+    background-color: var(--blue-primary);
+    box-shadow: rgb(0 0 0 / 10%) 0px 1px 2px 0px;
+}
+.restaurant__hamburgerMenu{
+    margin-top: -0.2rem !important;
+    background-color: var(--blue-second-primary);
+    padding: 3px 6px;
+    cursor: pointer;
+    display: inline-block;
+    margin-left: 15px;
+}
+.restaurant__hamburgerMenu > svg {
+    font-size: 1.7rem;
+}
